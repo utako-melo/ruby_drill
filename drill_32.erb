@@ -1,0 +1,27 @@
+class Student
+  def set_name(name)
+    @name = name
+  end
+
+  def self.introduce   #introduceメソッドはクラスメソッドなのでインスタンスstudentからは呼び出せない
+    puts "私の名前は#{@name}です。"   #@nameはクラスメソッド内では使えない
+  end
+end
+
+student = Student.new
+student.set_name("山田太郎")
+student.introduce
+
+
+
+#回答
+
+class Student
+  def set_name(name)
+    @name = name
+  end
+
+  def introduce
+    puts "私の名前は#{@name}です。"
+  end
+end
