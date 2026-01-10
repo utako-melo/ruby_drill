@@ -1,0 +1,31 @@
+def near_ten(num)
+  digits = num.to_s.chars.map(&:to_i)
+  sum = digits.sum
+  answer = sum % 10
+  if answer > 5
+    diff = 10 - answer
+  else
+    diff = answer
+  end
+  if diff <= 2
+    puts "true"
+  else
+    puts "10の倍数との差は#{diff}です"
+  end
+end
+
+
+
+# 模範解答
+
+def near_ten(num)
+  total = (num/100) + (num/10 % 10) + (num % 10)
+  remainder = total % 10
+  if remainder <= 2 || remainder >= 8
+    puts "True"
+  elsif remainder <= 5
+    puts "10の倍数との差は#{remainder}です"
+  else 
+    puts "10の倍数との差は#{10 - remainder}です"
+  end
+end
